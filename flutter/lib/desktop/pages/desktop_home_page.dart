@@ -428,7 +428,8 @@ class _DesktopHomePageState extends State<DesktopHomePage>
   }
 
   Widget buildHelpCards(String updateUrl) {
-    if (!bind.isCustomClient() &&
+    /*
+	if (!bind.isCustomClient() &&
         updateUrl.isNotEmpty &&
         !isCardClosed &&
         bind.mainUriPrefixSync().contains('rustdesk')) {
@@ -454,10 +455,10 @@ class _DesktopHomePageState extends State<DesktopHomePage>
               ? 'https://github.com/rustdesk/rustdesk/releases/tag/${bind.mainGetNewVersion()}'
               : null);
     }
+	*/
     if (systemError.isNotEmpty) {
       return buildInstallCard("", systemError, "", () {});
     }
-
     if (isWindows && !bind.isDisableInstallation()) {
       if (!bind.mainIsInstalled()) {
         return buildInstallCard(
